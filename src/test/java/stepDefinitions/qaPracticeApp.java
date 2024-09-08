@@ -1,4 +1,6 @@
 package stepDefinitions;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -93,5 +95,20 @@ public class qaPracticeApp {
     @And("I enter password as {} in the password field")
     public void iEnterPasswordAsInThePasswordField(String password) {
         driver.findElement(By.id("password")).sendKeys(password);
+    }
+
+    // using hooks
+
+    @Before
+    public void beforeHook(){
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.get("https://qa-practice.netlify.app/");
+    }
+
+    @After
+    public void afterHook(){
+        driver.quit();
     }
 }

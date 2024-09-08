@@ -19,6 +19,7 @@ Feature: QA Practice App Automation
       Then I verify that checkboxes are displayed
       And I close the browser
 
+      @Regression
       Scenario Outline: Test Login with paramteres
         Given I launch to the app with urls as <url>
         When I go to login page

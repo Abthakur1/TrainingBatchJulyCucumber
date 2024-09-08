@@ -8,7 +8,9 @@ import io.cucumber.testng.CucumberOptions;
                 "html: target/cucumber-reports/cucumber.html",
                 "json: target/cucumber-reports/cucumber.json"},
         features = {"src/test/java/features"},
-        glue = {"stepDefinitions"}   // v. imp --> interview
+        glue = {"stepDefinitions"},
+        tags = "@Regression or @Smoke"
+
 )
 
 public class QAPracticeTestRunner extends AbstractTestNGCucumberTests {
